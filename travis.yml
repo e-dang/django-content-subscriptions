@@ -1,3 +1,5 @@
+# Setup based off of https://github.com/Fantomas42/django-tagging/
+
 language: python
 python:
   - 3.8
