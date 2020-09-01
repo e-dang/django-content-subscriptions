@@ -43,3 +43,6 @@ INSTALLED_APPS = [
     'subscriptions',
     'subscriptions.tests',
 ]
+
+AUTH_USER_MODEL = 'tests.ExtendedUser'
+SUBSCRIPTION_HOLDER_MODEL = 'tests.ExtendedUser'
