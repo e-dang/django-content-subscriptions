@@ -32,7 +32,7 @@ from .conftest import to_list
          'sharing_user1', 'sharing_user2', 'hidding_user0', 'hidding_user1', 'hidding_user2', 'hidden_user0',
          'hidden_user1', 'hidden_user2'])
 @pytest.mark.django_db
-def test_subscribable_related_manager(loaded_db, func, user_idx, expected_items_idxs):
+def test_subscribable_manager(loaded_db, func, user_idx, expected_items_idxs):
     users, items = loaded_db
 
     ret_items = to_list(getattr(users[user_idx].items, func)())
