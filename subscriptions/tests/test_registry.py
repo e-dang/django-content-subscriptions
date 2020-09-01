@@ -3,6 +3,7 @@ import mock
 
 from ..registry import register
 from .models import UnsubscribedItem
+from ..exceptions import AlreadyRegisteredContent
 
 
 @mock.patch('subscriptions.registry.registry')
@@ -15,9 +16,15 @@ def test_register(mock_registry):
 
 @mock.patch('subscriptions.registry.registry')
 def test_register_fail(mock_registry):
-    mock_registry.append.side_effect = [None, ValueError]
+    fake_registry = []
+
+    def side_effect(model):
+        fake_registry.append(model)
+
+    mock_registry.append.side_effect = side_effect
+    mock_registry.__contains__.side_effect = lambda x: x in fake_registry
 
     register(UnsubscribedItem)
 
-    with pytest.raises(ValueError):
+    with pytest.raises(AlreadyRegisteredContent):
         register(UnsubscribedItem)
