@@ -11,8 +11,8 @@ env:
   - DJANGO=3.1 DATABASE_ENGINE=postgres
   - DJANGO=3.1 DATABASE_ENGINE=mysql
 install:
-  - pip install requirements.txt
-  - pip install pytest pytest-django pytest-factoryboy mock
+  - pip3 install --user -r requirements.txt
+  - pip3 install pytest pytest-django pytest-factoryboy mock
   - sh -c "if [ '$DATABASE_ENGINE' = 'postgres' ]; then pip install psycopg2; psql -c 'create database subscriptions;' -U postgres; fi"
   - sh -c "if [ '$DATABASE_ENGINE' = 'mysql' ]; then pip install mysqlclient; mysql -e 'create database subscriptions CHARACTER SET utf8 COLLATE utf8_general_ci;'; mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root mysql; fi"
 script:
