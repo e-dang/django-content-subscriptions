@@ -1,4 +1,4 @@
-# django-content-subscriptions
+# django-content-subscriptions ![Travis (.com) branch](https://img.shields.io/travis/com/e-dang/django-content-subscriptions/master?label=master) ![Travis (.com) branch](https://img.shields.io/travis/com/e-dang/django-content-subscriptions/dev?label=dev)
 
 ## Description
 
