@@ -2,8 +2,8 @@ import pytest
 import factory
 from pytest_factoryboy import register
 
-from subscriptions.tests.models import ExtendedUser, Item
-from subscriptions.models import Subscription, HiddenContent
+from content_subscriptions.tests.models import ExtendedUser, Item
+from content_subscriptions.models import Subscription, HiddenContent
 from django.contrib.contenttypes.models import ContentType
 
 
