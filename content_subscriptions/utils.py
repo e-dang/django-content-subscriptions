@@ -1,3 +1,7 @@
+"""
+Module that contains convenience functions that wrap common database queries.
+"""
+
 from .models.subscription import Subscription
 from .models.hidden_content import HiddenContent
 from django.contrib.contenttypes.models import ContentType

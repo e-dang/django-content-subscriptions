@@ -21,9 +21,17 @@ class Subscribable(models.Model):
         abstract = True
 
     def hide(self):
+        """
+        Causes the content to be hidden.
+        """
+
         return utils.hide_content(self.owner, self)
 
     def reveal(self):
+        """
+        Unhides the content if it is hidden, otherwise it raises an HiddenContent.DoesNotExist exception.
+        """
+
         utils.reveal_content(self.owner, self)
 
     def visible_to(self):

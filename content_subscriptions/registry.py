@@ -5,6 +5,10 @@ registry = []
 
 
 def register(model):
+    """
+    Method for registering Subscribable Models to the registry and modfies them with a manager.
+    """
+
     if model in registry:
         raise AlreadyRegisteredContent('This model has already been registered!')
 
