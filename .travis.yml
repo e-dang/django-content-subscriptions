@@ -15,6 +15,6 @@ install:
   - pip3 install -e .
   - if [[ ${DATABASE_ENGINE} = "postgres" ]]; then pip3 install psycopg2; psql -c 'create database subscriptions;' -U postgres; fi
   - if [[ ${DATABASE_ENGINE} = "mysql" ]]; then pip3 install mysqlclient; mysql -e 'create database subscriptions CHARACTER SET utf8 COLLATE utf8_general_ci;'; mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root mysql; fi
-  - export DJANGO_SETTINGS_MODULE=content_subscriptions.tests.settings && django-admin makemigrations subscriptions tests && django-admin migrate
+  - export DJANGO_SETTINGS_MODULE=content_subscriptions.tests.settings && django-admin makemigrations content_subscriptions tests && django-admin migrate
 script:
   - pytest
