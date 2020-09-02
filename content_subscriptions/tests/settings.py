@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.sessions',
     'django.contrib.contenttypes',
-    'subscriptions',
-    'subscriptions.tests',
+    'content_subscriptions',
+    'content_subscriptions.tests',
 ]
 
 AUTH_USER_MODEL = 'tests.ExtendedUser'

@@ -6,7 +6,7 @@ from .models import UnsubscribedItem
 from ..exceptions import AlreadyRegisteredContent
 
 
-@mock.patch('subscriptions.registry.registry')
+@mock.patch('content_subscriptions.registry.registry')
 def test_register(mock_registry):
     register(UnsubscribedItem)
 
@@ -14,7 +14,7 @@ def test_register(mock_registry):
     mock_registry.append.called_once_with(UnsubscribedItem)
 
 
-@mock.patch('subscriptions.registry.registry')
+@mock.patch('content_subscriptions.registry.registry')
 def test_register_fail(mock_registry):
     fake_registry = []
 

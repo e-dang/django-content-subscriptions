@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-from subscriptions.registry import register
-from subscriptions.models import Subscribable, SubscriptionHolderAddons
+from content_subscriptions.registry import register
+from content_subscriptions.models import Subscribable, SubscriptionHolderAddons
 
 
 class UnsubscribedItem(Subscribable):

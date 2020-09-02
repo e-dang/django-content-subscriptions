@@ -22,8 +22,10 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created', models.DateTimeField(auto_now_add=True, db_index=True)),
                 ('content_type', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='contenttypes.contenttype')),
-                ('provider', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='subscribers', to=settings.AUTH_USER_MODEL)),
-                ('subscriber', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='subscriptions', to=settings.AUTH_USER_MODEL)),
+                ('provider', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                               related_name='subscribers', to=settings.AUTH_USER_MODEL)),
+                ('subscriber', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                                 related_name='subscriptions', to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'default_manager_name': 'subscriptions',
@@ -40,7 +42,8 @@ class Migration(migrations.Migration):
                 ('object_id', models.PositiveIntegerField(db_index=True)),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('content_type', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='contenttypes.contenttype')),
-                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='hidden', to=settings.AUTH_USER_MODEL)),
+                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                            related_name='hidden', to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'unique_together': {('owner', 'content_type', 'object_id')},

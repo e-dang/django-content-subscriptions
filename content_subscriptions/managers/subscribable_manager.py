@@ -71,7 +71,7 @@ class SubscribableManager(Manager):
         return Q(hidden__owner=self.instance)
 
     def _query_content_from_providers(self):
-        subscription = apps.get_model('subscriptions', 'Subscription')
+        subscription = apps.get_model('content_subscriptions', 'Subscription')
         ctype = ContentType.objects.get_for_model(self.model)
         providers = subscription.objects.filter(
             content_type=ctype, subscriber=self.instance.id).prefetch_related('provider__id').values_list('provider__id')

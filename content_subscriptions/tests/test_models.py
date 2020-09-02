@@ -29,7 +29,7 @@ def test_subscription_str(user_factory):
     assert string == f'{user2.username} is subscribing to {user1.username}\'s {content_type} content'
 
 
-@mock.patch('subscriptions.models.subscription_holder_addon.utils')
+@mock.patch('content_subscriptions.models.subscription_holder_addon.utils')
 def test_subscription_holder_addon_subscribe(mock_utils):
     mock_addon = mock.MagicMock(spec=SubscriptionHolderAddons)
     mock_provider = mock.MagicMock()
@@ -40,7 +40,7 @@ def test_subscription_holder_addon_subscribe(mock_utils):
     mock_utils.subscribe.assert_called_with(mock_addon, mock_provider, mock_content)
 
 
-@mock.patch('subscriptions.models.subscription_holder_addon.utils')
+@mock.patch('content_subscriptions.models.subscription_holder_addon.utils')
 def test_subscription_holder_addon_unsubscribe(mock_utils):
     mock_addon = mock.MagicMock(spec=SubscriptionHolderAddons)
     mock_provider = mock.MagicMock()
@@ -51,7 +51,7 @@ def test_subscription_holder_addon_unsubscribe(mock_utils):
     mock_utils.unsubscribe.assert_called_with(mock_addon, mock_provider, mock_content)
 
 
-@mock.patch('subscriptions.models.subscription_holder_addon.utils')
+@mock.patch('content_subscriptions.models.subscription_holder_addon.utils')
 def test_subscription_holder_addon_unsubscribe_all(mock_utils):
     mock_addon = mock.MagicMock(spec=SubscriptionHolderAddons)
 
@@ -60,7 +60,7 @@ def test_subscription_holder_addon_unsubscribe_all(mock_utils):
     mock_utils.unsubscribe_all.assert_called_with(mock_addon)
 
 
-@mock.patch('subscriptions.models.subscription_holder_addon.utils')
+@mock.patch('content_subscriptions.models.subscription_holder_addon.utils')
 def test_subscription_holder_addon_remove_subscriber(mock_utils):
     mock_addon = mock.MagicMock(spec=SubscriptionHolderAddons)
     mock_subscriber = mock.MagicMock()
@@ -70,7 +70,7 @@ def test_subscription_holder_addon_remove_subscriber(mock_utils):
     mock_utils.remove_subscriber.assert_called_with(mock_addon, mock_subscriber)
 
 
-@mock.patch('subscriptions.models.subscription_holder_addon.utils')
+@mock.patch('content_subscriptions.models.subscription_holder_addon.utils')
 def test_subscription_holder_addon_hide(mock_utils):
     mock_addon = mock.MagicMock(spec=SubscriptionHolderAddons)
     mock_content_object = mock.MagicMock()
@@ -80,7 +80,7 @@ def test_subscription_holder_addon_hide(mock_utils):
     mock_utils.hide_content.assert_called_with(mock_addon, mock_content_object)
 
 
-@mock.patch('subscriptions.models.subscription_holder_addon.utils')
+@mock.patch('content_subscriptions.models.subscription_holder_addon.utils')
 def test_subscription_holder_addon_reveal(mock_utils):
     mock_addon = mock.MagicMock(spec=SubscriptionHolderAddons)
     mock_content_object = mock.MagicMock()
@@ -90,7 +90,7 @@ def test_subscription_holder_addon_reveal(mock_utils):
     mock_utils.reveal_content.assert_called_with(mock_addon, mock_content_object)
 
 
-@mock.patch('subscriptions.models.subscription_holder_addon.utils')
+@mock.patch('content_subscriptions.models.subscription_holder_addon.utils')
 def test_subscription_holder_get_subscribers(mock_utils):
     mock_addon = mock.MagicMock(spec=SubscriptionHolderAddons)
 
@@ -99,7 +99,7 @@ def test_subscription_holder_get_subscribers(mock_utils):
     mock_utils.get_subscribers.assert_called_with(mock_addon)
 
 
-@mock.patch('subscriptions.models.subscription_holder_addon.utils')
+@mock.patch('content_subscriptions.models.subscription_holder_addon.utils')
 def test_subscription_holder_get_subscriptions(mock_utils):
     mock_addon = mock.MagicMock(spec=SubscriptionHolderAddons)
 
@@ -108,7 +108,7 @@ def test_subscription_holder_get_subscriptions(mock_utils):
     mock_utils.get_subscriptions.assert_called_with(mock_addon)
 
 
-@mock.patch('subscriptions.models.subscribable.utils')
+@mock.patch('content_subscriptions.models.subscribable.utils')
 def test_subscribable_hide(mock_utils):
     mock_subscribable = mock.MagicMock(spec=Subscribable)
     mock_owner = mock.MagicMock()
@@ -119,7 +119,7 @@ def test_subscribable_hide(mock_utils):
     mock_utils.hide_content.assert_called_with(mock_owner, mock_subscribable)
 
 
-@mock.patch('subscriptions.models.subscribable.utils')
+@mock.patch('content_subscriptions.models.subscribable.utils')
 def test_subscribable_reveal(mock_utils):
     mock_subscribable = mock.MagicMock(spec=Subscribable)
     mock_owner = mock.MagicMock()

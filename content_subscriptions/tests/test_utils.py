@@ -1,6 +1,6 @@
 import pytest
 
-from subscriptions.models import Subscription, HiddenContent
+from content_subscriptions.models import Subscription, HiddenContent
 from django.contrib.contenttypes.models import ContentType
 from .models import Item
 
